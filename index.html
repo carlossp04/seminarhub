@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111e31" />
+    <meta name="description" content="A small demonstration app for organising university web development seminars." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <title>SeminarHub · Course Organiser</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="#top" aria-label="SeminarHub home">
+          <span class="brand-mark" aria-hidden="true">S<span class="brand-dot">.</span></span>
+          <span class="brand-name">Seminar<span>Hub</span></span>
+        </a>
+        <div class="header-right">
+          <span class="course-label">WEB DEVELOPMENT SEMINAR</span>
+          <span class="demo-pill"><span class="status-dot"></span> Demo project</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero container" aria-labelledby="hero-title">
+        <div class="hero-pattern" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="eyebrow"><span class="eyebrow-line"></span> YOUR SEMINAR COMPANION</div>
+          <h1 id="hero-title">Stay curious.<br /><span>Stay organised.</span></h1>
+          <p>One simple place to explore presentations, see what's on the agenda, and prepare for the next great discussion.</p>
+          <a href="#schedule" class="hero-button">Explore the schedule <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-aside" aria-hidden="true">
+          <div class="floating-card floating-card-top"><span class="floating-icon">✳</span><span>Modern web<br /><strong>development</strong></span></div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="floating-card floating-card-bottom"><span class="mini-dot"></span><span>Learn · Share · Discuss</span></div>
+        </div>
+      </section>
+
+      <section id="schedule" class="content-area container" aria-label="Seminar timetable">
+        <div class="section-intro">
+          <div>
+            <p class="section-kicker">THE PROGRAMME</p>
+            <h2>Explore the schedule<span class="title-period">.</span></h2>
+            <p class="section-description">Choose a date to see what your classmates are presenting.</p>
+          </div>
+          <span class="data-note"><span class="note-dot"></span> Illustrative timetable</span>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="panel calendar-panel" aria-labelledby="calendar-title">
+            <div class="panel-heading calendar-heading">
+              <div>
+                <span class="panel-overline">ACADEMIC CALENDAR</span>
+                <h3 id="calendar-title">November 2026</h3>
+              </div>
+              <div class="calendar-controls" aria-label="Change calendar month">
+                <button id="previous-month" class="icon-button" type="button" aria-label="Previous month">←</button>
+                <button id="next-month" class="icon-button" type="button" aria-label="Next month">→</button>
+              </div>
+            </div>
+            <div class="calendar-weekdays" aria-hidden="true">
+              <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+            </div>
+            <div class="calendar-days" id="calendar-days" aria-label="Seminar dates"></div>
+            <div class="calendar-legend"><span class="legend-dot"></span> Scheduled presentation <span class="legend-hint">Select a date to see details</span></div>
+          </section>
+
+          <aside class="panel details-panel" aria-labelledby="details-heading">
+            <div class="details-topline"><span class="panel-overline">SELECTED PRESENTATION</span><span class="detail-icon" aria-hidden="true">↗</span></div>
+            <div id="presentation-details" aria-live="polite" aria-atomic="true"></div>
+          </aside>
+        </div>
+
+        <section class="programme" aria-labelledby="programme-heading">
+          <div class="programme-heading"><div><p class="section-kicker">AT A GLANCE</p><h2 id="programme-heading">Monthly programme<span class="title-period">.</span></h2></div><span id="programme-count" class="count-pill"></span></div>
+          <div id="programme-list" class="programme-list"></div>
+        </section>
+
+        <aside class="about-banner" aria-label="About the demonstration application">
+          <div class="about-icon" aria-hidden="true">✦</div>
+          <div><h3>Built for curious minds.</h3><p>A lightweight course organiser designed to make seminar information easy to find. No account or sign-in required.</p></div>
+          <span class="about-label">SEMINARHUB / V1.0</span>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer container"><span>© 2026 SeminarHub · Educational demo</span><span>Sample entries are not an official university timetable.</span></footer>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
