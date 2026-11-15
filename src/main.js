@@ -3,6 +3,7 @@ import { parseIsoDate, moveMonth, formatMonth, getMonthSeminars, getSeminarsOnDa
 import { renderCalendarDays } from './components/calendarView.js';
 import { renderPresentationDetails } from './components/presentationDetails.js';
 import { renderProgrammeList } from './components/programmeList.js';
+import { renderSuggestedQuestions } from './components/suggestedQuestions.js';
 
 // Deliberate fixed start: the live demo must look identical at every rehearsal.
 const state = {
@@ -18,6 +19,7 @@ const details = document.querySelector('#presentation-details');
 const programme = document.querySelector('#programme-list');
 const programmeHeading = document.querySelector('#programme-heading');
 const programmeCount = document.querySelector('#programme-count');
+const suggestedQuestions = document.querySelector('#suggested-questions');
 
 function render() {
   const monthSessions = getMonthSeminars(presentations, state.year, state.monthIndex);
@@ -27,6 +29,7 @@ function render() {
   calendarTitle.textContent = monthLabel;
   calendarDays.innerHTML = renderCalendarDays({ ...state, presentations });
   details.innerHTML = renderPresentationDetails(selected, state.selectedDate);
+  suggestedQuestions.innerHTML = renderSuggestedQuestions(selected?.id);
   programme.innerHTML = renderProgrammeList(monthSessions, state.selectedId);
   programmeHeading.setAttribute('aria-label', `${monthLabel} programme`);
   programmeCount.textContent = `${monthSessions.length} ${monthSessions.length === 1 ? 'session' : 'sessions'}`;
